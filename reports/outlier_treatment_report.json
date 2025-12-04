@@ -1,0 +1,96 @@
+{
+  "timestamp": "2025-12-04T16:32:23.560860",
+  "original_shape": [
+    1000098,
+    61
+  ],
+  "treated_shape": [
+    1000098,
+    70
+  ],
+  "treatments_applied": [
+    {
+      "column": "TotalPremium",
+      "treatment": "Winsorization (capping)",
+      "bound_applied": "Upper: 54.82",
+      "values_affected": 208911,
+      "percentage_affected": "20.89%",
+      "reason": "High impact outliers (94.3% of total value)"
+    },
+    {
+      "column": "SumInsured",
+      "treatment": "Winsorization (capping)",
+      "bound_applied": "Upper: 617500.00",
+      "values_affected": 104294,
+      "percentage_affected": "10.43%",
+      "reason": "High impact outliers (86.2% of total value)"
+    },
+    {
+      "column": "CalculatedPremiumPerTerm",
+      "treatment": "Winsorization (capping)",
+      "bound_applied": "Upper: 220.16",
+      "values_affected": 175508,
+      "percentage_affected": "17.55%",
+      "reason": "High impact outliers (79.1% of total value)"
+    },
+    {
+      "column": "CustomValueEstimate",
+      "treatment": "Winsorization (capping)",
+      "bound_applied": "Upper: 220000.00",
+      "values_affected": 109756,
+      "percentage_affected": "10.97%",
+      "reason": "High impact outliers (22.2% of total value)"
+    },
+    {
+      "column": "cubiccapacity",
+      "treatment": "Winsorization (capping)",
+      "bound_applied": "Upper: 3379.50",
+      "values_affected": 2626,
+      "percentage_affected": "0.26%",
+      "reason": "High impact outliers (3.5% of total value)"
+    },
+    {
+      "column": "VehicleAge",
+      "treatment": "Winsorization (capping)",
+      "bound_applied": "Upper: 14.50",
+      "values_affected": 7482,
+      "percentage_affected": "0.75%",
+      "reason": "High impact outliers (2.6% of total value)"
+    },
+    {
+      "column": "TotalPremium",
+      "treatment": "Negative value correction",
+      "bound_applied": "Replace negative with 0.01",
+      "values_affected": 288,
+      "percentage_affected": "0.03%",
+      "reason": "Financial amounts should not be negative"
+    },
+    {
+      "column": "TotalClaims",
+      "treatment": "Negative value correction",
+      "bound_applied": "Replace negative with 0.01",
+      "values_affected": 5,
+      "percentage_affected": "0.00%",
+      "reason": "Financial amounts should not be negative"
+    },
+    {
+      "column": "TotalClaims",
+      "treatment": "Log transformation",
+      "bound_applied": "log(x + 1)",
+      "values_affected": "All",
+      "percentage_affected": "100%",
+      "reason": "High skewness (447.23)"
+    }
+  ],
+  "new_columns_created": [
+    "log_TotalClaims",
+    "TotalPremium_is_outlier",
+    "TotalClaims_is_outlier",
+    "SumInsured_is_outlier",
+    "CalculatedPremiumPerTerm_is_outlier",
+    "CustomValueEstimate_is_outlier",
+    "cubiccapacity_is_outlier",
+    "kilowatts_is_outlier",
+    "VehicleAge_is_outlier"
+  ]
+}

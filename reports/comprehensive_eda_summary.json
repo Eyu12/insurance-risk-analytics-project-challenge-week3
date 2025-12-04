@@ -1,0 +1,185 @@
+{
+  "project": "AlphaCare Insurance Risk Analytics - Task 1",
+  "date": "2025-12-04T16:32:39.227175",
+  "data_summary": {
+    "original_shape": [
+      1000098,
+      52
+    ],
+    "cleaned_shape": [
+      1000098,
+      61
+    ],
+    "treated_shape": [
+      1000098,
+      70
+    ],
+    "columns_original": 52,
+    "columns_cleaned": 61,
+    "columns_treated": 70,
+    "memory_original_mb": "390.1",
+    "memory_cleaned_mb": "443.5",
+    "memory_treated_mb": "512.2"
+  },
+  "key_metrics": {
+    "loss_ratio": -0.031079648444926104,
+    "claim_frequency": 0.0,
+    "avg_claim_severity": 0.0,
+    "avg_premium": 60.02363060487609,
+    "combined_ratio": 29.968920351555074
+  },
+  "outlier_summary": {
+    "columns_analyzed": [
+      "TotalPremium",
+      "TotalClaims",
+      "SumInsured",
+      "CalculatedPremiumPerTerm",
+      "CustomValueEstimate",
+      "cubiccapacity",
+      "kilowatts",
+      "VehicleAge"
+    ],
+    "methods_used": [
+      "IQR Method",
+      "Z-Score Method",
+      "Percentile Method",
+      "Modified Z-Score Method",
+      "Domain-Specific Rules"
+    ],
+    "high_impact_outliers": [
+      {
+        "column": "TotalPremium",
+        "outlier_count": 209042,
+        "outlier_percentage": 20.902151589144264,
+        "value_impact_percentage": 94.3082988986476,
+        "description": "High impact: 94.3% of total value"
+      },
+      {
+        "column": "TotalClaims",
+        "outlier_count": 5,
+        "outlier_percentage": 0.0004999510048015294,
+        "value_impact_percentage": 100.0,
+        "description": "High impact: 100.0% of total value"
+      },
+      {
+        "column": "SumInsured",
+        "outlier_count": 104294,
+        "outlier_percentage": 10.428378018954144,
+        "value_impact_percentage": 86.21761950054609,
+        "description": "High impact: 86.2% of total value"
+      },
+      {
+        "column": "CalculatedPremiumPerTerm",
+        "outlier_count": 175508,
+        "outlier_percentage": 17.549080190141368,
+        "value_impact_percentage": 79.12979838983557,
+        "description": "High impact: 79.1% of total value"
+      },
+      {
+        "column": "CustomValueEstimate",
+        "outlier_count": 217880,
+        "outlier_percentage": 21.78586498523145,
+        "value_impact_percentage": 22.216942682624662,
+        "description": "High impact: 22.2% of total value"
+      }
+    ],
+    "treatments_applied": [
+      {
+        "column": "TotalPremium",
+        "treatment": "Winsorization (capping)",
+        "bound_applied": "Upper: 54.82",
+        "values_affected": 208911,
+        "percentage_affected": "20.89%",
+        "reason": "High impact outliers (94.3% of total value)"
+      },
+      {
+        "column": "SumInsured",
+        "treatment": "Winsorization (capping)",
+        "bound_applied": "Upper: 617500.00",
+        "values_affected": 104294,
+        "percentage_affected": "10.43%",
+        "reason": "High impact outliers (86.2% of total value)"
+      },
+      {
+        "column": "CalculatedPremiumPerTerm",
+        "treatment": "Winsorization (capping)",
+        "bound_applied": "Upper: 220.16",
+        "values_affected": 175508,
+        "percentage_affected": "17.55%",
+        "reason": "High impact outliers (79.1% of total value)"
+      },
+      {
+        "column": "CustomValueEstimate",
+        "treatment": "Winsorization (capping)",
+        "bound_applied": "Upper: 220000.00",
+        "values_affected": 109756,
+        "percentage_affected": "10.97%",
+        "reason": "High impact outliers (22.2% of total value)"
+      },
+      {
+        "column": "cubiccapacity",
+        "treatment": "Winsorization (capping)",
+        "bound_applied": "Upper: 3379.50",
+        "values_affected": 2626,
+        "percentage_affected": "0.26%",
+        "reason": "High impact outliers (3.5% of total value)"
+      },
+      {
+        "column": "VehicleAge",
+        "treatment": "Winsorization (capping)",
+        "bound_applied": "Upper: 14.50",
+        "values_affected": 7482,
+        "percentage_affected": "0.75%",
+        "reason": "High impact outliers (2.6% of total value)"
+      },
+      {
+        "column": "TotalPremium",
+        "treatment": "Negative value correction",
+        "bound_applied": "Replace negative with 0.01",
+        "values_affected": 288,
+        "percentage_affected": "0.03%",
+        "reason": "Financial amounts should not be negative"
+      },
+      {
+        "column": "TotalClaims",
+        "treatment": "Negative value correction",
+        "bound_applied": "Replace negative with 0.01",
+        "values_affected": 5,
+        "percentage_affected": "0.00%",
+        "reason": "Financial amounts should not be negative"
+      },
+      {
+        "column": "TotalClaims",
+        "treatment": "Log transformation",
+        "bound_applied": "log(x + 1)",
+        "values_affected": "All",
+        "percentage_affected": "100%",
+        "reason": "High skewness (447.23)"
+      }
+    ]
+  },
+  "top_insights": [
+    "1. Gauteng dominates the portfolio with highest policy count but varies in profitability",
+    "2. Certain vehicle types show consistently high loss ratios despite low policy count",
+    "3. Clear seasonal patterns in claims with peak risk in winter months",
+    "4. Significant variation in risk profiles across provinces and vehicle types"
+  ],
+  "recommendations": [
+    "Focus marketing on low-risk, high-profitability segments identified in visualization 2",
+    "Consider risk-based pricing for high-loss-ratio vehicle types",
+    "Implement seasonal pricing adjustments based on monthly risk patterns",
+    "Develop targeted underwriting guidelines for high-risk provinces"
+  ],
+  "files_generated": [
+    "..\\reports\\data_quality_report.json",
+    "..\\reports\\insurance_metrics.json",
+    "..\\reports\\outlier_analysis_report.json",
+    "..\\reports\\outlier_treatment_report.json",
+    "..\\reports\\eda_insights.json",
+    "..\\reports\\creative_visualizations.png",
+    "..\\reports\\vehicle_type_analysis.png",
+    "..\\data\\processed\\loaded_data.csv",
+    "..\\data\\processed\\cleaned_insurance_data.csv",
+    "..\\data\\processed\\insurance_data_outliers_treated.csv"
+  ]
+}

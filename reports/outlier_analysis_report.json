@@ -1,0 +1,458 @@
+{
+  "timestamp": "2025-12-04T16:28:26.872834",
+  "methods_used": [
+    "IQR Method",
+    "Z-Score Method",
+    "Percentile Method",
+    "Modified Z-Score Method",
+    "Domain-Specific Rules"
+  ],
+  "columns_analyzed": [
+    "TotalPremium",
+    "TotalClaims",
+    "SumInsured",
+    "CalculatedPremiumPerTerm",
+    "CustomValueEstimate",
+    "cubiccapacity",
+    "kilowatts",
+    "VehicleAge"
+  ],
+  "outlier_summary": {},
+  "iqr_results": {
+    "TotalPremium": {
+      "q1": 0.0,
+      "q3": 21.929824561403,
+      "iqr": 21.929824561403,
+      "lower_bound": -32.8947368421045,
+      "upper_bound": 54.8245614035075,
+      "outlier_count": 209042,
+      "outlier_percentage": 20.902151589144264,
+      "outlier_value": 56612812.47263281,
+      "value_percentage": 94.3082988986476,
+      "min_outlier": -782.576754385965,
+      "max_outlier": 778.698157894737
+    },
+    "TotalClaims": {
+      "q1": 0.0,
+      "q3": 0.0,
+      "iqr": 0.0,
+      "lower_bound": 0.0,
+      "upper_bound": 0.0,
+      "outlier_count": 5,
+      "outlier_percentage": 0.0004999510048015294,
+      "outlier_value": -18656.961578947397,
+      "value_percentage": 100.0,
+      "min_outlier": -12002.412280701796,
+      "max_outlier": -72.0
+    },
+    "SumInsured": {
+      "q1": 5000.0,
+      "q3": 250000.0,
+      "iqr": 245000.0,
+      "lower_bound": -362500.0,
+      "upper_bound": 617500.0,
+      "outlier_count": 104294,
+      "outlier_percentage": 10.428378018954144,
+      "outlier_value": 520693063908.0,
+      "value_percentage": 86.21761950054609,
+      "min_outlier": 625000.0,
+      "max_outlier": 5000000.0
+    },
+    "CalculatedPremiumPerTerm": {
+      "q1": 3.2248,
+      "q3": 90.0,
+      "iqr": 86.7752,
+      "lower_bound": -126.938,
+      "upper_bound": 220.1628,
+      "outlier_count": 175508,
+      "outlier_percentage": 17.549080190141368,
+      "outlier_value": 93283937.8074,
+      "value_percentage": 79.12979838983557,
+      "min_outlier": 220.1951,
+      "max_outlier": 74422.1679
+    },
+    "CustomValueEstimate": {
+      "q1": 220000.0,
+      "q3": 220000.0,
+      "iqr": 0.0,
+      "lower_bound": 220000.0,
+      "upper_bound": 220000.0,
+      "outlier_count": 217880,
+      "outlier_percentage": 21.78586498523145,
+      "outlier_value": 49152970782.44,
+      "value_percentage": 22.216942682624662,
+      "min_outlier": 20000.0,
+      "max_outlier": 26550000.0
+    },
+    "cubiccapacity": {
+      "q1": 2237.0,
+      "q3": 2694.0,
+      "iqr": 457.0,
+      "lower_bound": 1551.5,
+      "upper_bound": 3379.5,
+      "outlier_count": 56939,
+      "outlier_percentage": 5.693342052478857,
+      "outlier_value": 87298414.0,
+      "value_percentage": 3.5384882819869055,
+      "min_outlier": 0.0,
+      "max_outlier": 12880.0
+    },
+    "kilowatts": {
+      "q1": 75.0,
+      "q3": 111.0,
+      "iqr": 36.0,
+      "lower_bound": 21.0,
+      "upper_bound": 165.0,
+      "outlier_count": 2175,
+      "outlier_percentage": 0.21747868708866533,
+      "outlier_value": 392441.0,
+      "value_percentage": 0.40364182242357904,
+      "min_outlier": 0.0,
+      "max_outlier": 309.0
+    },
+    "VehicleAge": {
+      "q1": 2.0,
+      "q3": 7.0,
+      "iqr": 5.0,
+      "lower_bound": -5.5,
+      "upper_bound": 14.5,
+      "outlier_count": 7482,
+      "outlier_percentage": 0.7481266835850087,
+      "outlier_value": 126226.0,
+      "value_percentage": 2.643422740941179,
+      "min_outlier": 15.0,
+      "max_outlier": 28.0
+    }
+  },
+  "zscore_results": {
+    "TotalPremium": {
+      "mean": 60.02363060487609,
+      "std": 149.6689611220728,
+      "outlier_count": 39400,
+      "outlier_percentage": 3.9396139178360516,
+      "min_z_score": 8.732617337573574e-05,
+      "max_z_score": 5.629760363630776
+    },
+    "TotalClaims": {
+      "mean": -0.01865513337587656,
+      "std": 13.300353888113094,
+      "outlier_count": 5,
+      "outlier_percentage": 0.0004999510048015294,
+      "min_z_score": 0.0014026042865332468,
+      "max_z_score": 902.4115994609213
+    },
+    "SumInsured": {
+      "mean": 603869.6544906177,
+      "std": 1506825.2689226833,
+      "outlier_count": 0,
+      "outlier_percentage": 0.0,
+      "min_z_score": 0.002435355025099449,
+      "max_z_score": 2.917478513386247
+    },
+    "CalculatedPremiumPerTerm": {
+      "mean": 117.87569130125247,
+      "std": 399.7017210631286,
+      "outlier_count": 743,
+      "outlier_percentage": 0.07429271931350727,
+      "min_z_score": 0.0005119034719272697,
+      "max_z_score": 185.89935517681494
+    }
+  },
+  "percentile_results": {
+    "TotalPremium": {
+      "p01": 0.0,
+      "p99": 778.698157894737,
+      "lower_extremes_count": 288,
+      "upper_extremes_count": 0,
+      "total_extremes": 288,
+      "extremes_percentage": 0.028797177876568093
+    },
+    "TotalClaims": {
+      "p01": 0.0,
+      "p99": 0.0,
+      "lower_extremes_count": 5,
+      "upper_extremes_count": 0,
+      "total_extremes": 5,
+      "extremes_percentage": 0.0004999510048015294
+    },
+    "SumInsured": {
+      "p01": 0.01,
+      "p99": 5000000.0,
+      "lower_extremes_count": 0,
+      "upper_extremes_count": 0,
+      "total_extremes": 0,
+      "extremes_percentage": 0.0
+    },
+    "CalculatedPremiumPerTerm": {
+      "p01": 0.8818,
+      "p99": 980.6702,
+      "lower_extremes_count": 9888,
+      "upper_extremes_count": 9997,
+      "total_extremes": 19885,
+      "extremes_percentage": 1.9883051460956827
+    },
+    "CustomValueEstimate": {
+      "p01": 58000.0,
+      "p99": 360800.0,
+      "lower_extremes_count": 9976,
+      "upper_extremes_count": 9951,
+      "total_extremes": 19927,
+      "extremes_percentage": 1.9925047345360154
+    },
+    "cubiccapacity": {
+      "p01": 1298.0,
+      "p99": 2987.0,
+      "lower_extremes_count": 6566,
+      "upper_extremes_count": 3082,
+      "total_extremes": 9648,
+      "extremes_percentage": 0.9647054588650313
+    },
+    "kilowatts": {
+      "p01": 66.0,
+      "p99": 135.0,
+      "lower_extremes_count": 9862,
+      "upper_extremes_count": 9344,
+      "total_extremes": 19206,
+      "extremes_percentage": 1.920411799643635
+    },
+    "VehicleAge": {
+      "p01": 0.0,
+      "p99": 14.0,
+      "lower_extremes_count": 0,
+      "upper_extremes_count": 7482,
+      "total_extremes": 7482,
+      "extremes_percentage": 0.7481266835850087
+    }
+  },
+  "modified_z_results": {
+    "TotalPremium": {
+      "median": 2.178333333333,
+      "mad": 2.178333333333,
+      "outlier_count": 296589,
+      "outlier_percentage": 29.655993712616162
+    },
+    "SumInsured": {
+      "median": 7500.0,
+      "mad": 4000.0,
+      "outlier_count": 358568,
+      "outlier_percentage": 35.853286377934964
+    },
+    "CalculatedPremiumPerTerm": {
+      "median": 8.4369,
+      "mad": 7.457199999999999,
+      "outlier_count": 376683,
+      "outlier_percentage": 37.6646088683309
+    }
+  },
+  "domain_outliers": {
+    "unusual_premium_ratios": {
+      "count": 850194,
+      "percentage": 85.0110689152463,
+      "min_ratio": -1578.947368421,
+      "max_ratio": 3763.440860215,
+      "description": "Premium/SumInsured ratio outside typical range 0.1% to 50%"
+    },
+    "TotalPremium_zero_values": {
+      "count": 381634,
+      "percentage": 38.15966035328538,
+      "description": "TotalPremium equals zero"
+    },
+    "TotalPremium_negative_values": {
+      "count": 288,
+      "percentage": 0.028797177876568093,
+      "description": "TotalPremium is negative"
+    },
+    "TotalClaims_zero_values": {
+      "count": 1000093,
+      "percentage": 99.99950004899519,
+      "description": "TotalClaims equals zero"
+    },
+    "TotalClaims_negative_values": {
+      "count": 5,
+      "percentage": 0.0004999510048015294,
+      "description": "TotalClaims is negative"
+    }
+  },
+  "summary": [
+    {
+      "column": "TotalPremium",
+      "data_type": "float64",
+      "total_records": 1000098,
+      "missing_values": 0,
+      "zero_values": 381634,
+      "iqr_outliers": 209042,
+      "iqr_outlier_pct": 20.902151589144264,
+      "iqr_value_impact": 94.3082988986476,
+      "extreme_values": 288,
+      "extreme_values_pct": 0.028797177876568093
+    },
+    {
+      "column": "TotalClaims",
+      "data_type": "float64",
+      "total_records": 1000098,
+      "missing_values": 0,
+      "zero_values": 1000093,
+      "iqr_outliers": 5,
+      "iqr_outlier_pct": 0.0004999510048015294,
+      "iqr_value_impact": 100.0,
+      "extreme_values": 5,
+      "extreme_values_pct": 0.0004999510048015294
+    },
+    {
+      "column": "SumInsured",
+      "data_type": "float64",
+      "total_records": 1000098,
+      "missing_values": 0,
+      "zero_values": 0,
+      "iqr_outliers": 104294,
+      "iqr_outlier_pct": 10.428378018954144,
+      "iqr_value_impact": 86.21761950054609,
+      "extreme_values": 0,
+      "extreme_values_pct": 0.0
+    },
+    {
+      "column": "CalculatedPremiumPerTerm",
+      "data_type": "float64",
+      "total_records": 1000098,
+      "missing_values": 0,
+      "zero_values": 7,
+      "iqr_outliers": 175508,
+      "iqr_outlier_pct": 17.549080190141368,
+      "iqr_value_impact": 79.12979838983557,
+      "extreme_values": 19885,
+      "extreme_values_pct": 1.9883051460956827
+    },
+    {
+      "column": "CustomValueEstimate",
+      "data_type": "float64",
+      "total_records": 1000098,
+      "missing_values": 0,
+      "zero_values": 0,
+      "iqr_outliers": 217880,
+      "iqr_outlier_pct": 21.78586498523145,
+      "iqr_value_impact": 22.216942682624662,
+      "extreme_values": 19927,
+      "extreme_values_pct": 1.9925047345360154
+    },
+    {
+      "column": "cubiccapacity",
+      "data_type": "float64",
+      "total_records": 1000098,
+      "missing_values": 0,
+      "zero_values": 3323,
+      "iqr_outliers": 56939,
+      "iqr_outlier_pct": 5.693342052478857,
+      "iqr_value_impact": 3.5384882819869055,
+      "extreme_values": 9648,
+      "extreme_values_pct": 0.9647054588650313
+    },
+    {
+      "column": "kilowatts",
+      "data_type": "float64",
+      "total_records": 1000098,
+      "missing_values": 0,
+      "zero_values": 328,
+      "iqr_outliers": 2175,
+      "iqr_outlier_pct": 0.21747868708866533,
+      "iqr_value_impact": 0.40364182242357904,
+      "extreme_values": 19206,
+      "extreme_values_pct": 1.920411799643635
+    },
+    {
+      "column": "VehicleAge",
+      "data_type": "int64",
+      "total_records": 1000098,
+      "missing_values": 0,
+      "zero_values": 27589,
+      "iqr_outliers": 7482,
+      "iqr_outlier_pct": 0.7481266835850087,
+      "iqr_value_impact": 2.643422740941179,
+      "extreme_values": 7482,
+      "extreme_values_pct": 0.7481266835850087
+    }
+  ],
+  "impact_analysis": [
+    {
+      "metric": "TotalPremium",
+      "outliers": 209042,
+      "outlier_pct": "20.90%",
+      "value_from_outliers": "R 56,612,812.47",
+      "pct_of_total": "94.31%",
+      "impact": "HIGH"
+    },
+    {
+      "metric": "TotalClaims",
+      "outliers": 5,
+      "outlier_pct": "0.00%",
+      "value_from_outliers": "R -18,656.96",
+      "pct_of_total": "100.00%",
+      "impact": "HIGH"
+    },
+    {
+      "metric": "SumInsured",
+      "outliers": 104294,
+      "outlier_pct": "10.43%",
+      "value_from_outliers": "R 520,693,063,908.00",
+      "pct_of_total": "86.22%",
+      "impact": "HIGH"
+    }
+  ],
+  "recommendations": [
+    {
+      "column": "TotalPremium",
+      "severity": "HIGH",
+      "action": "INVESTIGATE & VALIDATE",
+      "reason": "Outliers account for 94.3% of total value",
+      "suggested_approach": "Review individual outlier cases for data errors or special circumstances"
+    },
+    {
+      "column": "TotalClaims",
+      "severity": "HIGH",
+      "action": "INVESTIGATE & VALIDATE",
+      "reason": "Outliers account for 100.0% of total value",
+      "suggested_approach": "Review individual outlier cases for data errors or special circumstances"
+    },
+    {
+      "column": "SumInsured",
+      "severity": "HIGH",
+      "action": "INVESTIGATE & VALIDATE",
+      "reason": "Outliers account for 86.2% of total value",
+      "suggested_approach": "Review individual outlier cases for data errors or special circumstances"
+    },
+    {
+      "column": "CalculatedPremiumPerTerm",
+      "severity": "HIGH",
+      "action": "INVESTIGATE & VALIDATE",
+      "reason": "Outliers account for 79.1% of total value",
+      "suggested_approach": "Review individual outlier cases for data errors or special circumstances"
+    },
+    {
+      "column": "CustomValueEstimate",
+      "severity": "HIGH",
+      "action": "INVESTIGATE & VALIDATE",
+      "reason": "Outliers account for 22.2% of total value",
+      "suggested_approach": "Review individual outlier cases for data errors or special circumstances"
+    },
+    {
+      "column": "cubiccapacity",
+      "severity": "LOW",
+      "action": "MONITOR",
+      "reason": "Minimal impact (3.5% of value)",
+      "suggested_approach": "Keep outliers but monitor for trends"
+    },
+    {
+      "column": "kilowatts",
+      "severity": "LOW",
+      "action": "MONITOR",
+      "reason": "Minimal impact (0.4% of value)",
+      "suggested_approach": "Keep outliers but monitor for trends"
+    },
+    {
+      "column": "VehicleAge",
+      "severity": "LOW",
+      "action": "MONITOR",
+      "reason": "Minimal impact (2.6% of value)",
+      "suggested_approach": "Keep outliers but monitor for trends"
+    }
+  ]
+}
