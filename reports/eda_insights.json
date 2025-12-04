@@ -1,0 +1,14 @@
+{
+  "key_findings": [
+    "1. Gauteng dominates the portfolio with highest policy count but varies in profitability",
+    "2. Certain vehicle types show consistently high loss ratios despite low policy count",
+    "3. Clear seasonal patterns in claims with peak risk in winter months",
+    "4. Significant variation in risk profiles across provinces and vehicle types"
+  ],
+  "recommendations": [
+    "Focus marketing on low-risk, high-profitability segments identified in visualization 2",
+    "Consider risk-based pricing for high-loss-ratio vehicle types",
+    "Implement seasonal pricing adjustments based on monthly risk patterns",
+    "Develop targeted underwriting guidelines for high-risk provinces"
+  ]
+}
