@@ -41,3 +41,47 @@ These visualizations highlight regional risk levels, claim frequency patterns, a
 - LossRatio was engineered as a key analytical metric.
 - Initial EDA exposes differences in risk by province and customer type.
 - Plots reveal strong claim–premium relationships and skewed financial features.
+
+# Task 2: Reproducible and Auditable Data Pipeline with DVC
+
+## Overview
+In finance and insurance, it is crucial to have **reproducible and auditable analyses** for regulatory compliance, debugging, or auditing. Task-2 demonstrates how to use **Data Version Control (DVC)** to track datasets and ensure any analysis or model can be reproduced.
+
+DVC allows you to version your datasets, track changes, and store data in a remote location, while Git tracks the `.dvc` metafiles.
+
+
+## Steps Completed
+
+### 1. Branch Setup
+- Created a new branch `task-2` for this task.
+- Merged necessary changes from Task-1 into `main` prior to starting Task-2.
+
+### 2. DVC Installation
+- pip install dvc
+
+### 3. Initialize DVC
+- Initializes DVC in the project folder.
+- Creates .dvc directory and configuration files.
+
+### 4. Configure DVC Remote Storage
+- Created a dedicated folder for DVC storage:
+- Added the folder as the default DVC remote:
+- dvc remote add -d localstorage 
+
+### 5. Add Dataset to DVC
+- Dataset used: data/processed/cleaned_insurance_data.csv
+- dvc add "data/processed/cleaned_insurance_data.csv"
+- This generates a .dvc file  that tracks the dataset version.
+
+### 6. Commit Changes to Git
+- .dvc file is now tracked by Git while the actual dataset remains ignored.
+
+### 7. Push Data to DVC Remote
+- Copies the dataset to the configured DVC remote (insurance-dvc-storage).
+- Ensures reproducibility and auditable data versions.
+
+## Key Notes
+- .dvc files track the metadata of datasets and are tracked in Git.
+- Raw datasets can be ignored by Git to avoid large repository sizes.
+- DVC ensures you can reproduce analysis with the exact same data version.
+- dvc status can be used to check if tracked data is up-to-date.
