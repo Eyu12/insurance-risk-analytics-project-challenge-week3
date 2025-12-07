@@ -1,4 +1,40 @@
 
+# 📘 End-to-End Insurance Risk Analytics & Predictive Modeling
+
+## Objective:
+Analyze historical car insurance data for AlphaCare Insurance Solutions (ACIS) to identify low-risk customers, optimize premiums, and improve marketing targeting.
+
+## 🎯 Business Goals
+- Find low-risk customer segments
+- Understand what drives claims and losses
+- Build predictive models for claim severity and probability
+- Use data to set risk-based premiums
+- Make actionable business recommendations
+
+## Project Structure 
+bash 
+ .
+├── .dvc/                  # DVC configuration for data versioning
+├── .github/               # GitHub workflows
+├── .venv/                 # Virtual environment
+├── data/
+│   ├── processed/         # Processed datasets
+│   ├── raw/               # Raw datasets
+├── dvc_data/
+│   ├── cleaned_insurance_data.csv
+│   └── cleaned_insurance_data.csv.dvc
+├── notebooks/
+│   ├── models/            # Model scripts and experiments
+│   ├── plots/             # Plots and visualizations
+│   ├── reports/           # Report notebooks
+│   ├── task1_eda.ipynb
+│   ├── task3_ab_hypothesis_testing.ipynb
+│   └── task4_modeling.ipynb
+├── reports/               # Generated reports
+├── README.md
+└── requirements.txt       # Python dependencies
+
+
 
 # 📊 Task 1 – Data Import & Exploratory Data Analysis (EDA)
 
@@ -85,3 +121,208 @@ DVC allows you to version your datasets, track changes, and store data in a remo
 - Raw datasets can be ignored by Git to avoid large repository sizes.
 - DVC ensures you can reproduce analysis with the exact same data version.
 - dvc status can be used to check if tracked data is up-to-date.
+
+# 🧪 Task 3 — Statistical Validation of Key Risk Drivers
+
+This task focuses on statistically validating or rejecting key hypotheses related to **risk** and **margin** variations across customer and geographic attributes. These findings support the development of a more effective segmentation strategy.
+
+---
+
+## 🎯 Objective
+
+Determine whether specific features (Province, Zip Code, Gender) significantly affect:
+
+- **Claim Frequency** – % of policies with ≥1 claim  
+- **Claim Severity** – Average claim amount (for claimers only)  
+- **Margin** – TotalPremium − TotalClaims  
+
+The goal is to identify statistically meaningful segmentation variables.
+
+---
+
+## 📊 Null Hypotheses Tested
+
+| Hypothesis | Description |
+|-----------|-------------|
+| **H₀₁** | No risk differences across provinces |
+| **H₀₂** | No risk differences between zip codes |
+| **H₀₃** | No significant margin difference between zip codes |
+| **H₀₄** | No significant risk difference between Women and Men |
+
+---
+
+## 🛠️ Methodology
+
+### **1. Select Metrics**
+- Claim Frequency  
+- Claim Severity  
+- Margin  
+
+### **2. Data Segmentation**
+Split the data into:
+
+- **Group A (Control Group)**  
+- **Group B (Test Group)**  
+
+For multi-class features (e.g., provinces), two categories may be selected to form A/B groups.  
+These groups must be equivalent on unrelated variables.
+
+---
+
+### **3. Statistical Tests Applied**
+
+| Scenario | Test |
+|----------|------|
+| Categorical vs Categorical | Chi-Squared Test |
+| Numeric vs Categorical (two groups) | Independent t-test / Z-test |
+| Numeric vs Categorical (multiple groups) | ANOVA |
+
+---
+
+### **4. Decision Rule**
+
+- Reject H₀ if **p-value < 0.05** → Feature impacts risk/margin  
+- Fail to reject H₀ if **p ≥ 0.05** → No significant impact  
+
+---
+
+## 📝 Deliverables
+
+- Clear KPIs  
+- Segmentation criteria  
+- Statistical test results  
+- p-value summary table  
+- Final interpretation for each hypothesis  
+- Business recommendations for rejected hypotheses  
+
+### Example Interpretation:
+> We reject H₀ for provinces (p < 0.01). Gauteng shows 15% higher loss ratios than Western Cape. Regional premium adjustments are recommended.
+
+---
+
+## 🔧 Git Requirements
+
+- Merge Task-2 PR into main  
+- Create branch **task-3**  
+- Commit changes with meaningful messages  
+- Submit PR for review  
+
+---
+
+## 📦 Output
+
+- `task_3_hypothesis_testing.ipynb`  
+- `task_3_results.csv`  
+- `task_3_report.md`  
+
+---
+
+# 🤖 Task 4 — Predictive Modeling for Risk-Based Pricing
+
+Task 4 focuses on building machine learning models to support a **dynamic, risk-based pricing system**.  
+This includes both regression modeling (claim severity) and classification modeling (claim probability).
+
+---
+
+## 🎯 Goals
+
+### **1. Claim Severity Prediction (Regression)**
+Predict `TotalClaims` for records where claims > 0.
+
+Metrics:  
+- RMSE  
+- R²  
+
+### **2. Premium Optimization Model**
+Predict the most appropriate premium using ML models.
+
+### **Advanced (Recommended):**  
+Predict claim probability using a classification model:
+
+
+---
+
+## 🛠️ Workflow
+
+### **1. Data Preparation**
+- Handle missing values  
+- Perform feature engineering  
+- Encode categorical data (One-Hot, Label Encoding)  
+- Train-test split (70:30 or 80:20)
+
+---
+
+### **2. Models Implemented**
+
+#### Regression
+- Linear Regression  
+- Random Forest Regressor  
+- Gradient Boosting / XGBoost  
+
+#### Classification (Optional but recommended)
+- Logistic Regression  
+- Random Forest Classifier  
+- XGBoost Classifier  
+
+---
+
+### **3. Model Evaluation**
+
+#### Regression Metrics:
+- RMSE  
+- MAE  
+- R²  
+
+#### Classification Metrics:
+- Accuracy  
+- Precision  
+- Recall  
+- F1-score  
+- ROC-AUC  
+
+A comparison table should be included in the report.
+
+---
+
+## 🔍 Model Interpretability
+
+Use:
+
+- **SHAP**  
+- **LIME**
+
+Extract **Top 5–10 most influential features** and provide business interpretation.
+
+### Example Insight:
+> SHAP shows vehicle age strongly increases predicted claim severity. Premium rates should account for higher risk in older vehicles.
+
+---
+
+## 📝 Deliverables
+
+- Clean data preparation script  
+- Modeling scripts (regression & classification)  
+- Evaluation metrics summary  
+- SHAP/LIME plots  
+- Final business recommendations  
+
+---
+
+## 🔧 Git Requirements
+
+- Merge Task-3 branch into main  
+- Create **task-4** branch  
+- Commit frequently with descriptive messages  
+- Submit PR after completing the task  
+
+---
+
+## 📦 Output
+
+- `task_4_modeling.ipynb`  
+- `model_performance_summary.csv`  
+- `shap_analysis/` folder  
+- `task_4_report.md`  
+
+---
+
