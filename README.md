@@ -11,30 +11,6 @@ Analyze historical car insurance data for AlphaCare Insurance Solutions (ACIS) t
 - Use data to set risk-based premiums
 - Make actionable business recommendations
 
-## 🗂️ Project Structure
-```bash 
- .
-├── .dvc/                  # DVC configuration for data versioning
-├── .github/               # GitHub workflows
-├── .venv/                 # Virtual environment
-├── data/
-│   ├── processed/         # Processed datasets
-│   ├── raw/               # Raw datasets
-├── dvc_data/
-│   ├── cleaned_insurance_data.csv
-│   └── cleaned_insurance_data.csv.dvc
-├── notebooks/
-│   ├── models/            # Model scripts and experiments
-│   ├── plots/             # Plots and visualizations
-│   ├── reports/           # Report notebooks
-│   ├── task1_eda.ipynb
-│   ├── task3_ab_hypothesis_testing.ipynb
-│   └── task4_modeling.ipynb
-├── reports/               # Generated reports
-├── README.md
-└── requirements.txt       # Python dependencies
-tree -L 1
-
 # 📊 Task 1 – Data Import & Exploratory Data Analysis (EDA)
 
 AlphaCare Insurance Solutions (ACIS) is analyzing historical insurance data to identify risk patterns, understand customer behavior, and prepare the dataset for predictive modeling.
@@ -295,7 +271,6 @@ Extract **Top 5–10 most influential features** and provide business interpreta
 ### Example Insight:
 > SHAP shows vehicle age strongly increases predicted claim severity. Premium rates should account for higher risk in older vehicles.
 
----
 
 ## 📝 Deliverables
 
@@ -323,5 +298,26 @@ Extract **Top 5–10 most influential features** and provide business interpreta
 - `shap_analysis/` folder  
 - `task_4_report.md`  
 
----
+## 🗂️ Project Structure
+```bash 
+ .
+├── .dvc/                  # DVC configuration for data versioning
+├── .github/               # GitHub workflows
+├── .venv/                 # Virtual environment
+├── data/
+│   ├── processed/         # Processed datasets
+│   ├── raw/               # Raw datasets
+├── dvc_data/
+│   ├── cleaned_insurance_data.csv
+│   └── cleaned_insurance_data.csv.dvc
+├── notebooks/
+│   ├── models/            # Model scripts and experiments
+│   ├── plots/             # Plots and visualizations
+│   ├── reports/           # Report notebooks
+│   ├── task1_eda.ipynb
+│   ├── task3_ab_hypothesis_testing.ipynb
+│   └── task4_modeling.ipynb
+├── reports/               # Generated reports
+├── README.md
+└── requirements.txt       # Python dependencies
 
