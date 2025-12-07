@@ -11,8 +11,8 @@ Analyze historical car insurance data for AlphaCare Insurance Solutions (ACIS) t
 - Use data to set risk-based premiums
 - Make actionable business recommendations
 
-## Project Structure 
-bash 
+## 🗂️ Project Structure
+```bash 
  .
 ├── .dvc/                  # DVC configuration for data versioning
 ├── .github/               # GitHub workflows
@@ -33,8 +33,7 @@ bash
 ├── reports/               # Generated reports
 ├── README.md
 └── requirements.txt       # Python dependencies
-
-
+tree -L 1
 
 # 📊 Task 1 – Data Import & Exploratory Data Analysis (EDA)
 
